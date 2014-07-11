@@ -612,6 +612,18 @@ config ARCH_W90X900
 	  <http://www.nuvoton.com/hq/enu/ProductAndSales/ProductLines/
 		ConsumerElectronicsIC/ARMMicrocontroller/ARMMicrocontroller>
 
+config ARCH_LPC31XX
+	bool "NXP LPC31XX series"
+	select CPU_ARM926T
+	select CLKDEV_LOOKUP
+	select ARCH_REQUIRE_GPIOLIB
+	select ARCH_USES_GETTIMEOFFSET
+	help
+	  Say Y here for systems based on one of the NXP LPC313x & LPC315x
+	  System on a Chip processors.  These CPUs include an ARM926EJS
+	  core with a wide array of integrated devices for
+	  hand-held and low-power applications.
+
 config ARCH_LPC32XX
 	bool "NXP LPC32XX"
 	select ARCH_REQUIRE_GPIOLIB
@@ -954,6 +966,8 @@ source "arch/arm/mach-keystone/Kconfig"
 source "arch/arm/mach-kirkwood/Kconfig"
 
 source "arch/arm/mach-ks8695/Kconfig"
+
+source "arch/arm/mach-lpc31xx/Kconfig"
 
 source "arch/arm/mach-msm/Kconfig"
 
