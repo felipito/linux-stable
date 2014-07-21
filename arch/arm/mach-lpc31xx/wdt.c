@@ -27,7 +27,7 @@
 static struct resource watchdog_resources[] = {
 	{
 		.start = WDT_PHYS,
-		.end = WDT_PHYS + SZ_4K - 1,
+		.end   = WDT_PHYS + 0x40,
 		.flags = IORESOURCE_MEM,
 	},
 };

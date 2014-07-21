@@ -443,6 +443,15 @@ config TEGRA_WATCHDOG
 	  To compile this driver as a module, choose M here: the
 	  module will be called tegra_wdt.
 
+config LPC313X_WATCHDOG
+	tristate "NXP LPC313x watchdog"
+	depends on ARCH_LPC31XX
+	help
+	  Say Y here if to include support for the watchdog timer
+	  for the NXP's LPC313x uC SoC.
+	  To compile this driver as a module, choose M here: the
+	  module will be called wdt_lpc313x.
+
 # AVR32 Architecture
 
 config AT32AP700X_WDT
