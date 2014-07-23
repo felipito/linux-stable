@@ -27,6 +27,11 @@ config MACH_EA3152
 	help
 	  Say Y here if you are using Embedded Artist's EA3152 board
 	  
+config MACH_USBPIO
+        bool "USB PN-IO board"
+        help
+          Say Y to enable the USB PN-IO board
+
 config MACH_VAL3153
 	bool "val3153 board"
 	help
@@ -37,7 +42,7 @@ config MACH_VAL3154
 	select LPC3152_AD
 	help
 	  Say Y here if you are using the NXP val3154 board
-	  
+
 endchoice
 
 config LPC3152_AD

@@ -21,11 +21,8 @@
  *
  */
 
-
 #ifndef __ASM_ARCH_IRQS_H
 #define __ASM_ARCH_IRQS_H
-
-
 
 # define IRQ_EVT_ROUTER0  1        /*interrupts from Event router 0*/
 # define IRQ_EVT_ROUTER1  2        /*interrupts from Event router 1*/
@@ -55,7 +52,6 @@
 # define IRQ_USB          27       /*USB irq */
 # define IRQ_ISRAM0       28       /*ISRAM0 irq */
 # define IRQ_ISRAM1       29       /*ISRAM1 irq */
-
 
 # define NR_IRQ_CPU	  30	/* IRQs directly recognized by CPU */
 
@@ -106,7 +102,6 @@
 #define IRQ_EVTR0_START        IRQ_EVT_START
 #define IRQ_EVTR0_END          (IRQ_BOARD_START - 1)
 
-
 #if defined (CONFIG_MACH_VAL3153) 
 
 # define IRQ_CS8900_ETH_INT  IRQ_BOARD_START	/* Ethernet chip */
@@ -132,15 +127,14 @@
 #define IRQ_EVTR3_START        IRQ_SDMMC_CD1
 #define IRQ_EVTR3_END          IRQ_SDMMC_CD1
 
-
-#elif defined (CONFIG_MACH_EA313X) || defined(CONFIG_MACH_EA3152)|| defined(CONFIG_MACH_GNUBLIN)
+#elif defined (CONFIG_MACH_EA313X) || defined(CONFIG_MACH_EA3152)|| defined(CONFIG_MACH_GNUBLIN) || defined(CONFIG_MACH_USBPIO)
 # define IRQ_DM9000_ETH_INT   IRQ_BOARD_START	/* Ethernet chip */
 # define IRQ_SDMMC_CD         (IRQ_BOARD_START + 1)	/* SD card detect */
 # define IRQ_EA_VBUS_OVRC     (IRQ_BOARD_START + 2)	/* Over current indicator */
 # define IRQ_PENDOWN	      (IRQ_BOARD_START + 3)	/* Pendown from touch screen */
 # define NR_IRQ_BOARD         4
 
-#if defined (CONFIG_MACH_GNUBLIN)
+#if defined (CONFIG_MACH_GNUBLIN) || defined(CONFIG_MACH_USBPIO)
 /* now define board irq to event pin map */
 #define BOARD_IRQ_EVENT_MAP	{ \
 	CHIP_IRQ_EVENT_MAP \
@@ -150,7 +144,6 @@
 	{IRQ_PENDOWN, EVT_GPIO4, EVT_ACTIVE_HIGH}, \
 	}
 	//{IRQ_SDMMC_CD, EVT_mI2STX_BCK0, EVT_ACTIVE_LOW},
-	
 	
 #else
 /* now define board irq to event pin map */
@@ -205,7 +198,6 @@
 #define IRQ_EVTR3_END          0
 
 #endif
-
 
 #define NR_IRQS		(NR_IRQ_CPU + NR_IRQ_CHIP_EVT + NR_IRQ_BOARD)
 
